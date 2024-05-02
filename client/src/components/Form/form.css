@@ -1,0 +1,88 @@
+form{
+    display: flex;
+    gap:1rem;
+    flex-direction: column;
+
+}
+form > p{
+    color:rgb(61, 61, 61)
+}
+form > div{
+    display: flex;
+    flex-direction: column;
+    gap:1.5rem;
+    width: 100%;
+    height: auto;
+    border-radius: 7px;
+    padding:1.5rem 1.3rem;
+    background-color: white;
+
+}
+form div > label{
+    font-weight: 500;
+    font-size: 17px;
+    color:rgb(61, 61, 61)
+}
+label .required_field{
+    color:red;
+}
+form div > input{
+    border:none;
+    border-bottom: 2px solid lightgray;
+    width: 50%;    
+    font-size: 16px;
+}
+input[type="date"]{
+    width: 20%;
+}
+form div > select{
+    border: 2px solid lightgray;
+    color:rgb(167, 167, 167);
+    width: 30%;    
+    font-size: 16px;
+    padding:0.5rem
+}
+select option{
+    color: rgb(61, 61, 61);
+}
+form div> input:focus{
+    outline:none;
+}
+
+.form_buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    padding:0;
+}
+input[type="submit"], input[type="reset"] {
+    padding:0.5rem 1rem;
+    border-radius: 6px;
+    border:none;
+    width: 15%;
+}
+input[type="submit"]{
+    color: white;
+    background-color: blue;
+    font-weight: 500;
+}
+input[type="reset"]{
+    color: blue;
+    background-color: transparent;
+    font-weight: 600;
+}
+input[type="submit"]:disabled {
+    background-color: rgb(158, 158, 252);
+}
+
+.form_buttons input{
+    cursor: pointer;
+}
+
+.secondary_text{
+    margin-top: 15px;
+    font-size: 15px;
+}
+
