@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: center; 
     gap:1rem;
+    margin-top: 1rem;
 }
 header{
     background-color: white;
@@ -47,16 +48,12 @@ ul{
 .required_field{
     color:red;
 }
-footer{
-    text-align: center;
-    gap:1rem;
-    padding:1rem 0
+@media screen and (max-width: 900px){
+    .container{
+        width: 90%;
+        margin:auto;
+        margin-top: 1rem;
+    }
 }
-footer h1{
-    color: rgb(61, 61, 61);
-    font-weight: 500;
-}
-footer p{
-    color: rgb(61, 61, 61);
 
-}
+

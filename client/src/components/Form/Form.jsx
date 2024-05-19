@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import {createUser} from '../../api/index';
 import './form.css';
+import { useNavigate } from 'react-router-dom';
 
 const Form = () => {
-  const [isButtonClicked, setIsButtonClicked] = useState(false)
+  const [isButtonClicked, setIsButtonClicked] = useState(false);
+  const navigate = useNavigate();
 
     const [users, setUsers] = useState({email :  "", mobile_no: "", enrollment_no: "", name_of_learner: "", programme_code: "", study_centre_code: "", course_code: "", file_upload: "",choose_date:""});
 
@@ -12,8 +14,9 @@ const Form = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         createUser(users);//function call of post request
-        setUsers({email :  "", mobile_no: "", enrollment_no: "", name_of_learner: "", programme_code: "", study_centre_code: "", course_code: "", file_upload:"" ,choose_date:""}) //reset the form after submission
-        setIsButtonClicked(true)
+        resetFormdata() //reset the form after submission
+        navigate('/form_successfully_submitted'); //form successfully submitted message shown , after navigation
+        setIsButtonClicked(true);
     }
     
     const resetFormdata = () => {
@@ -22,7 +25,7 @@ const Form = () => {
 
     
   return (
-        <form action="" method="post" onSubmit={handleSubmit}>
+        <form  method="post" onSubmit={handleSubmit}>
           <div className="email_address">
             <label htmlFor="email">Email <span className="required_field">*</span></label>
             <input type="email" name="email" placeholder="Your email address" value={users.email} onChange={(e) => setUsers({...users, email : e.target.value})} required/>
@@ -61,10 +64,10 @@ const Form = () => {
             <span className="required_field">*</span></label>
             <select name="study_centre_code" value={users.study_centre_code} onChange={(e) => setUsers({...users, study_centre_code: e.target.value})} required>
               <option value="">Choose</option>
-              <option value="0500">0500</option>
-              <option value="0504" >0504</option>
-              <option value="0547">0547</option>
-              <option value="0532">0532</option>
+              <option value="0500">5000</option>
+              <option value="0504" >5040</option>
+              <option value="0547">5470</option>
+              <option value="0532">5320</option>
             </select>
           </div>
 
